@@ -1,6 +1,6 @@
-import { HttpClient } from '@http-client';
 import { useQuery } from 'react-query';
 
+import { HttpClient } from '../../../../core/http-client';
 import { GetUsersOutput } from '../../domain/dtos/get-users';
 import { QueryKeys } from '../../domain/dtos/query-keys';
 import { GetUsers } from '../../use-cases/get-users';

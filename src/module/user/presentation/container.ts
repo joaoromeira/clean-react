@@ -1,6 +1,7 @@
-import { HttpClient } from '@http-client';
-import { AxiosHttpClient } from '@vendor/axios';
 import { Container } from 'inversify';
+
+import { HttpClient } from '../../../core/http-client';
+import { AxiosHttpClient } from '../../../vendor/axios';
 
 const container = new Container();
 

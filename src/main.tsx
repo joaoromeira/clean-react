@@ -1,4 +1,4 @@
-import { UserModule } from './module/user/presentation/index';
+import { UserModule } from './module/user/presentation/user';
 
 export const App = (): JSX.Element => {
   return (

@@ -1,6 +1,7 @@
-import { HttpClient, HttpRequest, HttpResponse } from '@http-client';
 import axios, { AxiosResponse } from 'axios';
 import { injectable } from 'inversify';
+
+import { HttpClient, HttpRequest, HttpResponse } from '../../core/http-client';
 
 type Error = {
   response: AxiosResponse;

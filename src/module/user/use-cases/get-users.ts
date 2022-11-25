@@ -1,7 +1,7 @@
-import { Envs } from '@envs';
-import { HttpClient, HttpMethod } from '@http-client';
 import { inject } from 'inversify';
 
+import { Envs } from '../../../core/envs';
+import { HttpClient, HttpMethod } from '../../../core/http-client';
 import {
   GetUsersInput,
   GetUsersOutput,
