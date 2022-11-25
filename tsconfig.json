@@ -18,7 +18,21 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@core/*": ["core/*"],
+      "@vendor/*": ["vendor/*"],
+      "@http-client": ["core/http-client/index.ts"],
+      "@design-system": ["core/design-system/index.ts"],
+      "@envs": ["core/envs/index.ts"],
+    },
+    "typeRoots": [
+      "./src/@types",
+      "./node_modules/@types"
+    ]
   },
   "include": [
     "src"
