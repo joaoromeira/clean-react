@@ -1,6 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 import { injectable } from 'inversify';
 
+import { Auth } from '../../core/auth';
 import { HttpClient, HttpRequest, HttpResponse } from '../../core/http-client';
 
 type Error = {
@@ -9,8 +10,18 @@ type Error = {
 
 @injectable()
 export class AxiosHttpClient extends HttpClient {
+  public constructor(private readonly auth: Auth) {
+    super();
+  }
+
   public async request(data: HttpRequest): Promise<HttpResponse> {
     let axiosResponse: AxiosResponse;
+
+    const token = await this.auth.getToken();
+
+    if (token) {
+      data.headers = Object.assign({}, { authorization: `Bearer ${token}` });
+    }
 
     try {
       axiosResponse = await axios.request({
